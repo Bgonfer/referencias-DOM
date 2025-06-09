@@ -1,0 +1,17 @@
+/* Estilo base para a tabla */
+#tabla-ejemplo {
+  border-radius: 3px;
+  width: 60%;
+  margin: 20px 0;
+  background-color: #554848;
+  cursor:pointer;
+}
+
+/* Estilo para celdas de encabezado */
+#tabla-ejemplo th {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+
