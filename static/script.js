@@ -1,32 +1,40 @@
-// Exercicio 1: Etiqueta p
-const parrafo = document.getElementById('parrafo');
-console.log('Parrafo:', parrafo.textContent);
-
-// Exercicio 2: Etiqueta div
-const caja = document.querySelector('.caja');
-console.log('Div con clase:', caja.textContent);
-
-// Exercicio 3: Lista desordenada
-const lista = document.getElementById('lista-elementos');
-console.log('Lista completa:', lista.innerHTML);
-const elementos = lista.querySelectorAll('li');
-elementos.forEach((li, index) => {
-  console.log(`Elemento ${index + 1}:`, li.textContent);
-});
-
-// Exercicio 4: Boton
-const boton = document.getElementById('boton-accion');
-console.log('Referencia ó botón:', boton);
-
-// Exercicio 5: Tabla
-const cabeceraTh = document.getElementById('cabecera');
-const casillaTd = document.querySelector('.casilla-nombre');
+// Referencias base
+const divCaja = document.querySelector('.caja');
+const listaUl = document.getElementById('lista-elementos');
 const tabla = document.getElementById('tabla-ejemplo');
 
-console.log('Etiqueta TH:', cabeceraTh.textContent);
-console.log('Etiqueta TD:', casillaTd.textContent);
-console.log('Etiqueta TABLE:', tabla);
+//  Exercicio 1: acceder a etiqueta <p> dentro do div
+const pDentroDoDiv = divCaixa.querySelector('p');
+console.log('Ejercicio 1 - Parrafo dentro del div:', pDentroDelDiv?.textContent);
 
-// Exercicio final: Contenido en el body
-const cuerpo = document.body;
-console.log('Contenido completo en el body:', cuerpo.innerHTML);
+
+//  Exercicio 2: acceder ás etiquetas fillas do <ul>
+const hijasUl = listaUl.children;
+console.log('Ejercicio 2 - Hijas de la lista UL:');
+Array.from(hijasUl).forEach((el, i) => console.log(`LI ${i + 1}:`, el.textContent));
+
+
+
+//  Exercicio 3: acceder a unha etiqueta <p> desde a referencia á ul
+
+const parrafoFromUl = listaUl.parentElement.querySelector('#parrafo-for-ul');
+console.log('Ejercicio 3 - Parrafo desde UL:', paragrafoFromUl?.textContent);
+
+
+
+// Exercicio 4: acceder á etiqueta <tabla> desde a referencia á ul
+const tablaFromUl = listaUl.parentElement.querySelector('tabla');
+console.log('Ejercicio 4 - Tabla desde UL:', tablaFromUl?.outerHTML);
+
+// Accedendo a unha das súas etiquetas 'td'
+const algunTd = tablaFromUl?.querySelector('td');
+console.log('Ejercicio 4 - Un TD de la tabla:', algunTd?.textContent);
+
+// Exercicio 5: acceder a la etiqueta <div> desde a referencia a la tabla
+const divFromTabla = tabla.parentElement.querySelector('.caja');
+console.log('Ejercicio 5 - Div desde la tabla:', divFromTabla?.textContent);
+
+// Exercicio 6: acceder a todas as etiquetas 'td' da tabla
+const todosTd = tabla.querySelectorAll('td');
+console.log('Ejercicio 6 - Todos os TDs:');
+todosTd.forEach((td, i) => console.log(`TD ${i + 1}:`, td.textContent));
